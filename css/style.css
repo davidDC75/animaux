@@ -97,6 +97,51 @@ nav ul li a {
     text-transform: uppercase;
 }
 
+/* SMARTPHONE */
+/* media queries pour gèrer à partir de 375 de max-width */
+@media screen and (max-width: 375px) {
+
+    body span#hamburger-icon a img {
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin: 1vh 2vw 0 0;
+        width: 15vw;
+        height: auto;
+        z-index: 1000;
+    }
+
+    nav {
+        /* position: relative; */
+        width: 100vw;
+        height: 100vh;
+        /* background-color: darkorchid; */
+        display: block;
+        /* flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center; */
+        /* background-image: url('../images/nav/savane-cover-nav-w1923-h333.jpg');
+        background-size: cover;
+        background-position-y: 40%; */
+        box-shadow: 0px 10px 14px 0px rgba(0,0,0,0.75);
+        background: rgb(172,240,242);
+        background: linear-gradient(180deg, rgba(172,240,242,1) 0%, rgba(13,105,134,1) 74%, rgba(2,8,115,1) 100%);
+    }
+
+    nav div#logo-container {
+        display: none;
+    }
+
+    nav ul {
+        width: 100vw;
+        padding-top: 10vh;
+        padding-right: 0;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+}
 /* Classe de couleur pour test et debuggage */
 .red {
     background-color: red;

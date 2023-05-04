@@ -17,6 +17,11 @@ html {
     PARTIE BARRE DE NAVIGATION
 ***************************/
 
+/* On affiche le logo uniquement pour smartphone */
+body span#hamburger-icon {
+    display: none;
+}
+
 nav {
     position: relative;
     width: 100vw;
@@ -101,6 +106,10 @@ nav ul li a {
 /* media queries pour gèrer à partir de 375 de max-width */
 @media screen and (max-width: 375px) {
 
+    body span#hamburger-icon {
+        display:inline;
+    }
+
     body span#hamburger-icon a img {
         position: fixed;
         top: 0;
@@ -112,7 +121,8 @@ nav ul li a {
     }
 
     nav {
-        /* position: relative; */
+        position: absolute;
+        left: -100vw;
         width: 100vw;
         height: 100vh;
         /* background-color: darkorchid; */
@@ -126,18 +136,36 @@ nav ul li a {
         box-shadow: 0px 10px 14px 0px rgba(0,0,0,0.75);
         background: rgb(172,240,242);
         background: linear-gradient(180deg, rgba(172,240,242,1) 0%, rgba(13,105,134,1) 74%, rgba(2,8,115,1) 100%);
+        transition: all 1s;
     }
 
-    nav div#logo-container {
+    nav.navbarToggle {
+        left: 0;
+    }
+
+    /* nav div#logo-container {
         display: none;
+    } */
+    /*taille image 15vw auto */
+    nav div#logo-container {
+        display: inline;
+        top: 80vh;
+        left: calc( 50vw - 15vw);
+    }
+
+    nav div#logo-container img.logo-sarah {
+        margin: 0;
+        width: 30vw;
+        height: auto;
+        border-radius: 50%;
     }
 
     nav ul {
         width: 100vw;
-        padding-top: 10vh;
+        padding-top: 0;
         padding-right: 0;
         flex-flow: column nowrap;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         gap: 20px;
     }

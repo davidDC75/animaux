@@ -26,17 +26,22 @@ nav {
     position: relative;
     width: 100vw;
     height: 15vh;
-    /* background-color: darkorchid; */
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    /* background-image: url('../images/nav/savane-cover-nav-w1923-h333.jpg');
-    background-size: cover;
-    background-position-y: 40%; */
     box-shadow: 0px 10px 14px 0px rgba(0,0,0,0.75);
-    background: rgb(172,240,242);
-    background: linear-gradient(180deg, rgba(172,240,242,1) 0%, rgba(13,105,134,1) 74%, rgba(2,8,115,1) 100%);
+    background-color: #ffffff;
+    /************************************************/
+    background:
+    radial-gradient(#ffffff 49%,#0000 50%) calc(38px/-2) calc(38px/2),
+    repeating-conic-gradient(from 45deg,#9a8606 0 25%,#0000 0 50%)
+      calc(38px/2) calc(38px/2),
+    radial-gradient(#ffffff 49%,#0000 50%),radial-gradient(#ffffff 49%,#0000 50%) 38px 38px #9a8606;
+background-size: calc(2*38px) calc(2*38px);
+
+
+
 }
 
 /* on crée un div container pour le logo car si on fait ça direct dans l'image, ça crée
@@ -134,17 +139,8 @@ h1 {
         left: -100vw;
         width: 100vw;
         height: 100vh;
-        /* background-color: darkorchid; */
         display: block;
-        /* flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center; */
-        /* background-image: url('../images/nav/savane-cover-nav-w1923-h333.jpg');
-        background-size: cover;
-        background-position-y: 40%; */
-        box-shadow: 0px 10px 14px 0px rgba(0,0,0,0.75);
-        background: rgb(172,240,242);
-        background: linear-gradient(180deg, rgba(172,240,242,1) 0%, rgba(13,105,134,1) 74%, rgba(2,8,115,1) 100%);
+
         transition: all 1s;
     }
 

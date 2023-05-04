@@ -32,10 +32,11 @@
     display : flex ;
     justify-content : center ;
     align-items : center ;
+    /* TAILLE ORIGINAL DU SCRIPT */
     /* width : 280px ;
     height : 80px ; */
-    width: 200px;
-    height: 70px;
+    width: 140px;
+    height: 40px;
     box-sizing : border-box ;
     text-decoration : none ;
     border : solid 3px #000 ;
@@ -53,7 +54,9 @@
     margin : auto 0 ;
     width : 24px ;
     height : 24px ;
-    background : var(--base_color) ;
+    /* PERMET DE CACHER LA FLECHE DU BOUTON */
+    /* DECOMMENTEZ POUR L'AFFICHER */
+    /* background : var(--base_color) ; */
     transition : all ease .2s ;
 }
 .button__wrapper{
@@ -86,6 +89,7 @@
 .button__text{
     position : relative ;
     z-index : 3 ;
+    /* TAILLE ORIGINALE DU SCRIPT */
     /* font-size : 32px ; */
     font-size: 1rem;
     letter-spacing : 1px ;

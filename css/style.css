@@ -30,6 +30,8 @@ nav {
     background-size: cover;
     background-position-y: 40%; */
     box-shadow: 0px 10px 14px 0px rgba(0,0,0,0.75);
+    background: rgb(172,240,242);
+    background: linear-gradient(180deg, rgba(172,240,242,1) 0%, rgba(13,105,134,1) 74%, rgba(2,8,115,1) 100%);
 }
 
 /* on crée un div container pour le logo car si on fait ça direct dans l'image, ça crée
@@ -41,9 +43,11 @@ nav div#logo-container {
 }
 
 nav div#logo-container img.logo-sarah {
+    margin: 0 0 0 2vw;
     width: 10vw;
     height: auto;
     border-radius: 50%;
+    border: 2px solid black;
     box-shadow: 6px 6px 6px 0px rgba(0,0,0,0.75);
 }
 
@@ -57,6 +61,8 @@ nav ul {
 }
 
 nav ul li {
+    position: relative;
+    top: 2vh;
     list-style-type: none;
     height: 4vh;
     text-align: center;
@@ -64,9 +70,6 @@ nav ul li {
     flex-basis: 17%;
     flex-grow: 0;
     flex-shrink: 0;
-    /* background-color: rgba(120, 120, 120, 1); */
-    /* box-shadow: inset 0px 10px 14px 0px rgba(0,0,0,1); */
-    /* transition: all 0.4s; */
 }
 
 nav ul li:first-child {
@@ -92,15 +95,6 @@ nav ul li a {
     font-size: 1.4rem;
     text-decoration: none;
     text-transform: uppercase;
-    /* color: white; */
-}
-
-nav ul li:hover {
-    background-color: rgba(0, 0, 0, 1);
-}
-
-nav ul li:hover a {
-    color: white;
 }
 
 /* Classe de couleur pour test et debuggage */

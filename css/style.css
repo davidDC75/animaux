@@ -102,6 +102,15 @@ nav ul li a {
     text-transform: uppercase;
 }
 
+/****************************
+    HEADER
+*****************************/
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
 /* SMARTPHONE */
 /* media queries pour gèrer à partir de 375 de max-width */
 @media screen and (max-width: 375px) {
@@ -121,7 +130,7 @@ nav ul li a {
     }
 
     nav {
-        position: absolute;
+        position: fixed;
         left: -100vw;
         width: 100vw;
         height: 100vh;

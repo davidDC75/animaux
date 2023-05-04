@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/***************************
+    PARTIE BARRE DE NAVIGATION
+***************************/
+
+nav img.logo-sarah {
+    width: 10vw;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 6px 6px 6px 0px rgba(0,0,0,0.75);
+}

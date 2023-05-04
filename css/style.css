@@ -20,15 +20,15 @@ html {
 nav {
     position: relative;
     width: 100vw;
-    height: 8vh;
+    height: 15vh;
     /* background-color: darkorchid; */
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    background-image: url('../images/nav/savane-cover-nav-w1923-h333.jpg');
+    /* background-image: url('../images/nav/savane-cover-nav-w1923-h333.jpg');
     background-size: cover;
-    background-position-y: 40%;
+    background-position-y: 40%; */
     box-shadow: 0px 10px 14px 0px rgba(0,0,0,0.75);
 }
 
@@ -48,7 +48,7 @@ nav div#logo-container img.logo-sarah {
 }
 
 nav ul {
-    width: 75vw;
+    width: 80vw;
     padding-right: 1vw;
     display: flex;
     flex-flow: row nowrap;
@@ -60,24 +60,24 @@ nav ul li {
     list-style-type: none;
     height: 4vh;
     text-align: center;
-    line-height: 4vh;
+    line-height: 4.5vh;
     flex-basis: 17%;
     flex-grow: 0;
     flex-shrink: 0;
-    background-color: rgba(120, 120, 120, 1);
-    box-shadow: inset 0px 10px 14px 0px rgba(0,0,0,1);
-    transition: all 0.4s;
+    /* background-color: rgba(120, 120, 120, 1); */
+    /* box-shadow: inset 0px 10px 14px 0px rgba(0,0,0,1); */
+    /* transition: all 0.4s; */
 }
 
 nav ul li:first-child {
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
+    /* border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px; */
     margin-right: 2px;
 }
 
 nav ul li:last-child {
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
+    /* border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px; */
     margin-left: 2px;
 }
 
@@ -92,7 +92,7 @@ nav ul li a {
     font-size: 1.4rem;
     text-decoration: none;
     text-transform: uppercase;
-    color: white;
+    /* color: white; */
 }
 
 nav ul li:hover {

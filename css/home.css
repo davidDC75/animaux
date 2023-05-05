@@ -1,0 +1,117 @@
+/****************************
+    HEADER
+*****************************/
+
+header {
+    position: relative;
+    width: 100vw;
+    height: 85vh; /* moins la hauteur de nav */
+    background-image: url('../images/header/header-background-original.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1 {
+    position: relative;
+    top: 20vh;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Henny Penny', sans-serif;
+    font-size: 4rem;
+	margin: auto;
+	letter-spacing: 0.0015em;
+	text-align: center;
+    color: #00353F;
+    text-shadow: 10px 10px #FFBF66;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/***********************************
+    SECTION section-1
+************************************/
+
+section#section-1 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFBF66;
+}
+
+section#section-1 p {
+    position: relative;
+    background-color: #00353F;
+    color: white;
+    width: 80vw;
+    font-size: 1.3rem;
+    top: 5vh;
+    padding: 5%;
+    margin: 0 auto 0 auto;
+    border-radius: 50px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+section#section-1 div#container-image-section-1 {
+    width: 80vw;
+    position: relative;
+    margin: 0 auto 0 auto;
+    top: 8%;
+}
+
+section#section-1 div#container-image-section-1 img#image-section-1 {
+    display: inline-block;
+    width: 80vw;
+    height: auto;
+    border-radius: 50px;
+    /* display: block; */
+    margin: 0 auto 0 auto;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+section#section-1 div#container-image-section-1 span {
+    font-size: 1.4rem;
+    color: black;
+    position: absolute;
+    top: 3%;
+    left: 40%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* SMARTPHONE */
+/* media queries pour gèrer à partir de 375 de max-width */
+@media screen and (max-width: 375px) {
+
+    /***************************************
+        HEADER SMARTPHONE
+    ***************************************/
+    header {
+        height: 100vh;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    /***********************************
+        SECTION section-1 SMARTPHONE
+    ************************************/
+
+    section#section-1 p {
+        font-size: 1rem;
+        top: 8vh;
+    }
+
+    section#section-1 div#container-image-section-1 {
+        width: 70vw;
+        top: 9%;
+    }
+
+    section#section-1 div#container-image-section-1 img#image-section-1 {
+        width: 70vw;
+    }
+
+    section#section-1 div#container-image-section-1 span {
+        font-size: 1rem;
+        left: 6%;
+    }
+}

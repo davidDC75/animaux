@@ -1,0 +1,148 @@
+/***************************
+    PARTIE BARRE DE NAVIGATION
+***************************/
+
+/* On affiche le logo uniquement pour smartphone */
+body span#hamburger-icon {
+    display: none;
+}
+
+nav {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 10px 14px 0px rgba(0,0,0,0.75);
+    background-color: #ffffff;
+    /************************************************/
+    background-image: linear-gradient(45deg, #ce6a6b 25%, #ebaca2 25%, #ebaca2 50%, #ce6a6b 50%, #ce6a6b 75%, #ebaca2 75%, #ebaca2 100%);
+    background-size: 56.57px 56.57px;
+    z-index: 999;
+}
+
+/* on crée un div container pour le logo car si on fait ça direct dans l'image, ça crée
+    des problèmes avec le border-radius */
+nav div#logo-container {
+    position: relative;
+    top: 1vw;
+    left: 1vh;
+}
+
+nav div#logo-container img.logo-sarah {
+    margin: 0 0 0 2vw;
+    width: 10vw;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid black;
+    box-shadow: 6px 6px 6px 0px rgba(0,0,0,0.75);
+}
+
+nav ul {
+    width: 80vw;
+    padding-right: 1vw;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+    top: 2vh;
+    list-style-type: none;
+    height: 4vh;
+    text-align: center;
+    line-height: 4.5vh;
+    flex-basis: 17%;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+nav ul li:first-child {
+    /* border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px; */
+    margin-right: 2px;
+}
+
+nav ul li:last-child {
+    /* border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px; */
+    margin-left: 2px;
+}
+
+nav ul li:not(:first-child,:last-child) {
+    margin: 0 2px 0 2px;
+}
+
+nav ul li a {
+    /* pour rendre toute la li cliquable */
+    display: block;
+    font-family: 'Comme',  sans-serif;
+    font-size: 1.4rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* SMARTPHONE */
+/* media queries pour gèrer à partir de 375 de max-width */
+@media screen and (max-width: 375px) {
+
+    body span#hamburger-icon {
+        display:inline;
+    }
+
+    body span#hamburger-icon a img {
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin: 1vh 2vw 0 0;
+        width: 15vw;
+        height: auto;
+        z-index: 1000;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 5px;
+    }
+
+    nav {
+        position: fixed;
+        left: -100vw;
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        z-index: 999;
+        transition: all 1s;
+    }
+
+    nav.navbarToggle {
+        left: 0;
+    }
+
+    /*taille image 15vw auto */
+    nav div#logo-container {
+        display: inline;
+        top: 80vh;
+        left: calc( 50vw - 15vw);
+    }
+
+    nav div#logo-container img.logo-sarah {
+        margin: 0;
+        width: 30vw;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    nav ul {
+        width: 100vw;
+        padding-top: 0;
+        padding-right: 0;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+    }
+}

@@ -1,0 +1,18 @@
+/****************************
+    HEADER
+*****************************/
+
+header {
+    position: relative;
+    width: 100vw;
+    height: 85vh; /* moins la hauteur de nav */
+    background-image: url('../images/header/header-background-original.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* SMARTPHONE */
+/* media queries pour gèrer à partir de 375 de max-width */
+@media screen and (max-width: 375px) {
+}

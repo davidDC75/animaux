@@ -1,13 +1,18 @@
+@charset "utf-8";
+
+/* font-family: font-family: 'Comme', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Comme:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* font-family: 'Henny Penny', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+/* Pour les icônes */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0');
+
 /* Reset CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-
-/* font-family: font-family: 'Comme', cursive; */
-/* font-family: 'Henny Penny', sans-serif; */
 
 html {
     font-family: 'Raleway', sans-serif;
@@ -268,7 +273,6 @@ section#section-1 div#container-image-section-1 span {
 
     h1 {
         font-size: 2rem;
-        text-shadow: none;
     }
 
     a.anchor-link {

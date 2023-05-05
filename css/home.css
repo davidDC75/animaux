@@ -54,7 +54,7 @@ section#section-1 p {
 }
 
 section#section-1 div#container-image-section-1 {
-    width: 80vw;
+    width: 37vw;
     position: relative;
     margin: 0 auto 0 auto;
     top: 8%;
@@ -62,20 +62,19 @@ section#section-1 div#container-image-section-1 {
 
 section#section-1 div#container-image-section-1 img#image-section-1 {
     display: inline-block;
-    width: 80vw;
+    width: 37vw;
     height: auto;
     border-radius: 50px;
-    /* display: block; */
     margin: 0 auto 0 auto;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 section#section-1 div#container-image-section-1 span {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: black;
     position: absolute;
     top: 3%;
-    left: 40%;
+    left: 20%;
     background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -114,7 +113,7 @@ section#section-1 div#container-image-section-1 span {
     }
 
     section#section-1 div#container-image-section-1 span {
-        font-size: 1rem;
-        left: 6%;
+        font-size: 0.9rem;
+        left: 8%;
     }
 }

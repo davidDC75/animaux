@@ -88,9 +88,31 @@ nav ul li a {
     text-transform: uppercase;
 }
 
+/* TABLETTE */
+/* media queries pour gèrer à partir de 1000 de max-width */
+@media screen and (max-width: 1000px) and (min-width: 538px) {
+
+    nav ul {
+        width: 80vw;
+        height: 15vh;
+        padding-right: 0;
+        display: grid;
+        grid-template-rows: repeat(2,7vh);
+        grid-template-columns: repeat(3,26.6vw);
+        align-content: center;
+        align-items: center;
+    }
+
+    nav ul li {
+        position: static;
+        display: inline;
+    }
+
+}
+
 /* SMARTPHONE */
 /* media queries pour gèrer à partir de 375 de max-width */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 537px) {
 
     body span#hamburger-icon {
         display:inline;
@@ -101,7 +123,7 @@ nav ul li a {
         top: 0;
         right: 0;
         margin: 1vh 2vw 0 0;
-        width: 15vw;
+        width: 12vw;
         height: auto;
         z-index: 1000;
         background-color: rgba(255, 255, 255, 0.8);

@@ -45,9 +45,17 @@
     /* font-family: 'Fredoka One', cursive; */
 }
 
+/* TABLETTE */
+/* media queries pour gèrer à partir de 1000 de max-width */
+@media screen and (max-width: 1000px) and (min-width: 538px) {
+    .button {
+        height: 35px;
+    }
+}
+
 /* SMARTPHONE */
 /* media queries pour gèrer à partir de 375 de max-width */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 537px) {
 
     .button {
         width: 240px;
@@ -100,9 +108,18 @@
     height : 56px ;
 }
 
+/* TABLETTE */
+/* media queries pour gèrer à partir de 1000 de max-width */
+@media screen and (max-width: 1000px) and (min-width: 538px) {
+      /* On cache les oiseaux */
+      .characterBox {
+        visibility: hidden;
+    }
+}
+
 /* SMARTPHONE */
 /* A partir de 375 de max-width */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 537px) {
     /* On cache les oiseaux */
     .characterBox {
         visibility: hidden;
@@ -121,7 +138,7 @@
 
 /* SMARTPHONE */
 /* media queries pour gèrer à partir de 375 de max-width */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 537px) {
 
     .button__text {
         font-size: 2rem;

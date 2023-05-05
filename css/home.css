@@ -78,9 +78,32 @@ section#section-1 div#container-image-section-1 span {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
+/* TABLETTE */
+/* media queries pour gèrer à partir de 1000 de max-width */
+@media screen and (max-width: 1000px) and (min-width: 538px) {
+
+    h1 {
+        top: 24vh;
+    }
+
+    section#section-1 p {
+        font-size: 1.1rem;
+        line-height: 1.3rem;
+    }
+
+    section#section-1 div#container-image-section-1 {
+        width: 45vw;
+    }
+
+    section#section-1 div#container-image-section-1 img#image-section-1 {
+        width: 45vw;
+    }
+
+}
+
 /* SMARTPHONE */
 /* media queries pour gèrer à partir de 375 de max-width */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 537px) {
 
     /***************************************
         HEADER SMARTPHONE

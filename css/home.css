@@ -42,8 +42,10 @@ section#section-1 p {
     position: relative;
     background-color: #00353F;
     color: white;
+    text-align: justify;
     width: 80vw;
     font-size: 1.3rem;
+    line-height: 1.6rem;
     top: 5vh;
     padding: 5%;
     margin: 0 auto 0 auto;
@@ -98,6 +100,7 @@ section#section-1 div#container-image-section-1 span {
 
     section#section-1 p {
         font-size: 1rem;
+        line-height: 1.1rem;
         top: 8vh;
     }
 

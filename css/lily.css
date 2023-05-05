@@ -8,7 +8,74 @@ header {
     height: 85vh; /* moins la hauteur de nav */
 }
 
+header h1 {
+    position: relative;
+    left: 50%;
+    top: 6vh;
+    transform: translate(-50%,-50%);
+    font-family: 'Henny Penny', sans-serif;
+    font-size: 4rem;
+	margin: auto;
+	letter-spacing: 0.0015em;
+	text-align: center;
+    color: #00353F;
+    text-shadow: 10px 10px #FFBF66;
+}
+
+header p:nth-child(2) {
+    margin-top: 5vh;
+}
+
+header p:not(:nth-child(2)) {
+    margin-top: 1vh;
+}
+
+header p {
+    width: 80vw;
+    margin: 0 auto 0 auto;
+    text-align: justify;
+}
+
+header img {
+    display: block;
+    margin: 1vh auto 0 auto;
+    width: 30vw;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid black;
+    box-shadow: 6px 6px 6px 0px rgba(0,0,0,0.75);
+}
+
+/* TABLETTE */
+/* media queries pour gèrer à partir de 1000 de max-width */
+@media screen and (max-width: 1000px) and (min-width: 538px) {
+
+    header p {
+        font-size: 0.75rem;
+
+    }
+}
+
 /* SMARTPHONE */
 /* media queries pour gèrer à partir de 375 de max-width */
 @media screen and (max-width: 375px) {
+
+    header {
+        height: 100vh;
+    }
+
+    header h1 {
+        left: 0;
+        transform: translate(0,0);
+        font-size: 3rem;
+    }
+
+    header p:nth-child(2) {
+        margin-top: 8vh;
+    }
+
+    header p {
+        font-size: 0.75rem;
+    }
+
 }

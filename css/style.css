@@ -12,6 +12,7 @@
 html {
     font-family: 'Raleway', sans-serif;
     font-size: 1em;
+    scroll-behavior: smooth;
 }
 
 /* Pour les icones */
@@ -149,7 +150,15 @@ a.anchor-link {
     bottom: 2vh;
 }
 
+/***********************************
+    SECTION section-1
+************************************/
 
+section#section-1 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
 
 
 /* SMARTPHONE */

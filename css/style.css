@@ -158,6 +158,46 @@ section#section-1 {
     position: relative;
     width: 100vw;
     height: 100vh;
+    background-color: #FFBF66;
+}
+
+section#section-1 p {
+    position: relative;
+    background-color: #00353F;
+    color: white;
+    width: 80vw;
+    font-size: 1.3rem;
+    top: 5vh;
+    padding: 5%;
+    margin: 0 auto 0 auto;
+    border-radius: 50px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+section#section-1 div#container-image-section-1 {
+    width: 80vw;
+    position: relative;
+    margin: 0 auto 0 auto;
+    top: 8%;
+}
+
+section#section-1 div#container-image-section-1 img#image-section-1 {
+    display: inline-block;
+    width: 80vw;
+    height: auto;
+    border-radius: 50px;
+    /* display: block; */
+    margin: 0 auto 0 auto;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+section#section-1 div#container-image-section-1 span {
+    font-size: 1.4rem;
+    color: black;
+    position: absolute;
+    top: 3%;
+    left: 40%;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 
@@ -234,6 +274,29 @@ section#section-1 {
 
     a.anchor-link {
         left: 90vw;
+    }
+
+    /***********************************
+        SECTION section-1 SMARTPHONE
+    ************************************/
+
+    section#section-1 p {
+        font-size: 1rem;
+        top: 8vh;
+    }
+
+    section#section-1 div#container-image-section-1 {
+        width: 70vw;
+        top: 9%;
+    }
+
+    section#section-1 div#container-image-section-1 img#image-section-1 {
+        width: 70vw;
+    }
+
+    section#section-1 div#container-image-section-1 span {
+        font-size: 1rem;
+        left: 6%;
     }
 }
 

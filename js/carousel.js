@@ -187,6 +187,8 @@ class carousel {
 }
 
 myCarouselParameters = {
+    // Si un paramètre n'est pas fourni alors c'est sa valeur par défaut qui sera initialisée
+
     // Le container globale du carousel
     // carouselContainer: document.getElementById('carousel-container'),
 
@@ -206,7 +208,7 @@ myCarouselParameters = {
     isInfinite: true,
 
     // Si les flèches sont visibles
-    isArrowVisible: true,
+    isArrowVisible: false,
 
     // Si les liens directs vers les images est visible
     isImagesLinksVisible: true

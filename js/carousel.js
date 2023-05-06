@@ -6,6 +6,8 @@ class carousel {
     carouselImagesList = Object;
     btnBack = Object;
     btnForward = Object;
+
+    // Le tableau des liens direct vers les images
     imagesLinksArray = new Array;
     // Le nombre d'images
     nbImages = 0;
@@ -13,31 +15,67 @@ class carousel {
     offset = 0;
     // Si le carousel est infinie ou non
     isInfinite = false;
+    // Si les fléches sont visible ou pas
+    isArrowVisible = true;
+    // Si les liens vers les images sont visibles ou pas
+    isImagesLinksVisible = true;
 
 
     /**
      * Constructeur de la classe
      * @author s3g
-     * @param carouselContainer Le getElementById du container du carousel
-     * @param carouselImagesLinksContainer Le getElementById du container des liens vers les images
-     * @param carouselImagesList Le getElementById du container des images
-     * @param btnBack Le getElementById du bouton gauche
-     * @param btnForward Le getElementById du bouton droite
-     * @param isInfinite A true si on veut que le carousel soit infini
+     * @param parameters un objet contenant la configuration
      */
-    constructor( carouselContainer, carouselImagesLinksContainer, carouselImagesList, btnBack, btnForward, isInfinite) {
+    constructor(parameters) {
         // Initialisation variables
-        this.carouselContainer = carouselContainer;
-        this.carouselImagesLinksContainer = carouselImagesLinksContainer;
-        this.carouselImagesList = carouselImagesList;
-        this.btnBack = btnBack;
-        this.btnForward = btnForward;
-        this.isInfinite = isInfinite;
+        if (typeof(parameters.carouselContainer)!='undefined') {
+            this.carouselContainer = parameters.carouselContainer;
+        } else {
+            this.carouselContainer = document.getElementById('carousel-container');
+        }
+
+        if (typeof(parameters.carouselImagesLinksContainer)!='undefined') {
+            this.carouselImagesLinksContainer = parameters.carouselImagesLinksContainer;
+        } else {
+            this.carouselImagesLinksContainer = document.getElementById('carousel-images-links-container');
+        }
+
+        if (typeof(parameters.carouselImagesList)!='undefined') {
+            this.carouselImagesList = parameters.carouselImagesList;
+        } else {
+            this.carouselImagesList = document.getElementById('carousel-images-list');
+        }
+
+        if (typeof(parameters.btnBack)!='undefined') {
+            this.btnBack = parameters.btnBack;
+        } else {
+            this.btnBack = document.getElementById('carousel-arrow-back');
+        }
+
+        if (typeof(parameters.btnForward)!='undefined') {
+            this.btnForward = parameters.btnForward;
+        } else {
+            this.btnForward = document.getElementById('carousel-arrow-forward');
+        }
+
+        if (typeof(parameters.isInfinite)!='undefined') {
+            this.isInfinite = parameters.isInfinite;
+        }
+
+        if (typeof(parameters.isArrowVisible)!='undefined') {
+            this.isArrowVisible = parameters.isArrowVisible;
+        }
+
+        if (typeof(parameters.isImagesLinksVisible)!='undefined') {
+            this.isImagesLinksVisible = parameters.isImagesLinksVisible;
+        }
 
         // Nombre d'images
         this.nbImages = this.carouselImagesList.children.length;
 
-        this.initImagesLinksContainer();
+        if (this.isImagesLinksVisible) {
+            this.initImagesLinksContainer();
+        }
 
         // Ecoute sur les boutons
         this.btnBack.addEventListener('click', () => {
@@ -118,6 +156,12 @@ class carousel {
      * Raffraichie
      */
     refreshArrow() {
+        if ( !this.isArrowVisible ) {
+            this.btnBack.style.display='none';
+            this.btnForward.style.display='none';
+            return;
+        }
+
         if ( this.offset == 0 ) {
             if (!this.isInfinite) this.btnBack.style.display='none';
         } else {
@@ -134,14 +178,33 @@ class carousel {
 
 }
 
-carouselContainer = document.getElementById('carousel-container');
-carouselImagesLinksContainer = document.getElementById('carousel-images-links-container');
-carouselImagesList = document.getElementById('carousel-images-list');
+myCarouselParameters = {
+    // Le container globale du carousel
+    // carouselContainer: document.getElementById('carousel-container'),
 
-btnBack = document.getElementById('carousel-arrow-back');
-btnForward = document.getElementById('carousel-arrow-forward');
+    // Le container des pastilles qui permettent de naviguer directement vers une image
+    // carouselImagesLinksContainer: document.getElementById('carousel-images-links-container'),
 
-myCarousel = new carousel(carouselContainer, carouselImagesLinksContainer,carouselImagesList, btnBack, btnForward,true);
+    // Le container qui contient la liste des images
+    // carouselImagesList: document.getElementById('carousel-images-list'),
+
+    // La flèche gauche
+    // btnBack: document.getElementById('carousel-arrow-back'),
+
+    // La flèche droite
+    // btnForward: document.getElementById('carousel-arrow-forward'),
+
+    // Si le carousel est infini
+    isInfinite: true,
+
+    // Si les flèches sont visibles
+    isArrowVisible: true,
+
+    // Si les liens directs vers les images est visible
+    isImagesLinksVisible: true
+};
+
+myCarousel = new carousel(myCarouselParameters);
 
 
 

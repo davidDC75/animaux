@@ -1,3 +1,7 @@
+/********************************
+    PREMIER CAROUSEL FROM SCRATCH
+    PARTIE JAVASCRIPT
+*********************************/
 class carousel {
 
     // Les id des éléments du dom à utliser
@@ -83,14 +87,16 @@ class carousel {
             this.initImagesLinksContainer();
         }
 
-        // Ecoute sur les boutons
-        this.btnBack.addEventListener('click', () => {
-            this.clickBack();
-        });
+        // Ecoute sur les boutons des flèches si besoin
+        if (this.isArrowVisible) {
+            this.btnBack.addEventListener('click', () => {
+                this.clickBack();
+            });
 
-        this.btnForward.addEventListener('click', () => {
-            this.clickForward();
-        });
+            this.btnForward.addEventListener('click', () => {
+                this.clickForward();
+            });
+        }
 
         console.log('Nb images : ',this.nbImages);
         // On raffraichit l'affichage des flèches
@@ -218,13 +224,13 @@ myCarouselParameters = {
     isInfinite: true,
 
     // Si les flèches sont visibles
-    // isArrowVisible: true,
+    isArrowVisible: true,
 
     // Si les liens directs vers les images est visible
     isImagesLinksVisible: true,
 
     // Si on voit les numéros des images affichés
-    isNumberImageVisible: true
+    isNumberImageVisible: false
 };
 
 myCarousel = new carousel(myCarouselParameters);

@@ -4,15 +4,18 @@
 *********************************/
 @charset "utf-8";
 
+/* La taille du carousel */
 div#carousel-container {
     --carousel-width: 800px;
     --carousel-height: 600px;
 }
 
+/* La durée de la transition des éléments du container */
 div#carousel-container div#carousel-images-list {
     --transition-duration: 1s;
 }
 
+/* On centre le container sur l'écran et on lui assigne sa taille */
 div#carousel-container {
     position: relative;
     top: 50%;
@@ -23,6 +26,7 @@ div#carousel-container {
     overflow: hidden;
 }
 
+/* On positionne en bas et au centre ,le container des liens vers les images */
 div#carousel-images-links-container {
     position: fixed;
     bottom: 5%;
@@ -35,7 +39,7 @@ div#carousel-images-links-container {
     gap: 10px;
 }
 
-/* C'est ici qu'on défini la forme et la taille de nos liens direct vers les images */
+/* on défini la forme et la taille de nos liens direct vers les images */
 div#carousel-images-links-container .circle {
     position: relative;
     display: block;
@@ -52,7 +56,7 @@ div#carousel-images-links-container .circle {
     text-align: center;
     font-size: 0.8rem;
 
-    transition: all 0.3s;
+    transition: all 0.2s;
 }
 
 div#carousel-images-links-container .circle:hover {
@@ -63,6 +67,7 @@ div#carousel-images-links-container .circle:hover {
     line-height: 1.3rem;
 }
 
+/* Le container qui contient nos images en flex row */
 div#carousel-container div#carousel-images-list {
     display: flex;
     flex-flow: row nowrap;

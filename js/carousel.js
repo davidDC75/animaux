@@ -112,7 +112,7 @@ class carousel {
         for(let i = 0; i < this.nbImages ; i++) {
             this.imagesLinksArray[i] = document.createElement('div');
             this.imagesLinksArray[i].classList.add('circle');
-            this.imagesLinksArray[i].left=i*20+'px';
+            this.imagesLinksArray[i].left=i*30+'px';
             this.imagesLinksArray[i].setAttribute('id','image-link-'+i);
             // On ajoute le numéro si il le faut
             if (this.isNumberImageVisible) {

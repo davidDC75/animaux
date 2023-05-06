@@ -7,8 +7,17 @@ class carousel {
 
     nbImages = 0;
     offset = 0;
+    isInfinite = false;
 
-    constructor() {
+    /**
+     * Constructeur de la classe
+     * @author s3g
+     * @param isInfinite A true si on veut que le carousel soit infini
+     */
+    constructor(isInfinite) {
+
+        this.isInfinite = isInfinite;
+
         this.nbImages = this.carouselImageList.children.length;
 
         this.btnBack.addEventListener('click', () => {
@@ -22,49 +31,62 @@ class carousel {
         this.refreshArrow();
     }
 
+    /**
+     * Lorsque l'on click sur la fléche de gauche
+     * @author s3g
+     * @param none
+     */
     clickBack() {
         console.log('ClickBack');
-        if ( this.offset > 0 ) {
-            this.offset--;
-            console.log('Offset : ',this.offset);
-            this.translateXImages();
-            this.refreshArrow();
-        }
+        this.offset = ( this.offset > 0 ) ? --this.offset : this.nbImages-1;
+        console.log('Offset : ',this.offset);
+        this.translateXImages();
+        this.refreshArrow();
     }
 
+    /**
+     * Lorsque l'on click sur la fléche de droite
+     * @author s3g
+     * @param none
+     */
     clickForward() {
         console.log('ClickForward');
-        if ( this.offset < this.nbImages-1 ) {
-            this.offset++;
-            console.log('Offset : ',this.offset);
-            this.translateXImages();
-            this.refreshArrow();
-        }
-
+        this.offset = ( this.offset < this.nbImages-1 ) ? ++this.offset : 0;
+        console.log('Offset : ',this.offset);
+        this.translateXImages();
+        this.refreshArrow();
     }
 
+    /**
+     * Gére le défilement vers l'image cible
+     * @author s3g
+     * @param none
+     */
     translateXImages() {
         this.carouselImageList.style.transform = 'translateX(-' + (100*this.offset) + '%)';
     }
 
+    /**
+     * Raffraichie
+     */
     refreshArrow() {
         if ( this.offset == 0 ) {
-            this.btnBack.style.display='none';
+            if (!this.isInfinite) this.btnBack.style.display='none';
         } else {
-            this.btnBack.style.display='inline';
+            this.btnBack.style.display='block';
         }
 
         if ( this.offset == (this.nbImages-1) ) {
-            this.btnForward.style.display = 'none';
+            if (!this.isInfinite)  this.btnForward.style.display = 'none';
         }
         else {
-            this.btnForward.style.display='inline';
+            this.btnForward.style.display='block';
         }
     }
 
 }
 
-myCarousel = new carousel();
+myCarousel = new carousel(true);
 
 
 

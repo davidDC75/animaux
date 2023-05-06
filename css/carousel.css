@@ -3,6 +3,7 @@
 :root {
     --carousel-width: 800px;
     --carousel-height: 600px;
+    --transition-duration: 1s;
 }
 
 div#carousel-container {
@@ -19,7 +20,7 @@ div#carousel-container div#carousel-images-list {
     display: flex;
     flex-flow: row nowrap;
     height: var(--carousel-height);
-    transition: all 1s;
+    transition: all var(--transition-duration);
 }
 
 div#carousel-container .arrow-style {

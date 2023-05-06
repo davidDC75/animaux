@@ -19,6 +19,26 @@ div#carousel-container {
     overflow: hidden;
 }
 
+div#carousel-images-links-container {
+    position: fixed;
+    bottom: 3%;
+    left: 50%;
+    transform: translate(-50%,50%);
+    z-index: 1003;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 10px;
+}
+
+div#carousel-images-links-container .circle {
+    position: relative;
+    display: block;
+    background-color: blueviolet;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+}
+
 div#carousel-container div#carousel-images-list {
     display: flex;
     flex-flow: row nowrap;

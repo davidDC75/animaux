@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+:root {
+    --carousel-width: 800px;
+    --carousel-height: 600px;
+}
+
+div#carousel-container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--carousel-width);
+    height: var(--carousel-height);
+    overflow: hidden;
+}
+
+div#carousel-container div#carousel-images-list {
+    display: flex;
+    flex-flow: row nowrap;
+    height: var(--carousel-height);
+}
+
+div#carousel-container .arrow-style {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+}
+
+div#carousel-container .arrow-left {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    z-index: 1001;
+}
+
+div#carousel-container .arrow-right {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    z-index: 1002;
+}

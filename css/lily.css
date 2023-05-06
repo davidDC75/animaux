@@ -1,3 +1,6 @@
+@charset "utf-8";
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:900");
 /****************************
     HEADER
 *****************************/
@@ -46,13 +49,22 @@ header img {
     box-shadow: 6px 6px 6px 0px rgba(0,0,0,0.75);
 }
 
+/**********************************************
+    SECTION 1
+***********************************************/
+
+section#section-1 {
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFBF66;
+}
+
 /* TABLETTE */
 /* media queries pour gèrer à partir de 1000 de max-width */
 @media screen and (max-width: 1000px) and (min-width: 538px) {
 
     header p {
         font-size: 0.75rem;
-
     }
 }
 

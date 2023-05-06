@@ -91,6 +91,11 @@ class carousel {
         this.refreshArrow();
     }
 
+    /**
+     * Génère le container qui contient les puces pour sauter d'une image à une autre directement
+     * @author s3g
+     * @param none
+     */
     initImagesLinksContainer() {
         for(let i = 0; i < this.nbImages ; i++) {
             this.imagesLinksArray[i] = document.createElement('div');
@@ -103,6 +108,7 @@ class carousel {
             });
         }
     }
+
     /**
      * Lorsque l'on click sur la fléche de gauche
      * @author s3g
@@ -153,7 +159,9 @@ class carousel {
     }
 
     /**
-     * Raffraichie
+     * Raffraichie l'affichages des flèches
+     * @author s3g;
+     * @param none
      */
     refreshArrow() {
         if ( !this.isArrowVisible ) {

@@ -21,7 +21,7 @@ div#carousel-container {
 
 div#carousel-images-links-container {
     position: fixed;
-    bottom: 3%;
+    bottom: 5%;
     left: 50%;
     transform: translate(-50%,50%);
     z-index: 1003;
@@ -30,13 +30,20 @@ div#carousel-images-links-container {
     gap: 10px;
 }
 
+/* C'est ici qu'on défini la forme et la taille de nos liens direct vers les images */
 div#carousel-images-links-container .circle {
     position: relative;
     display: block;
-    background-color: blueviolet;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,53,63,1) 73%);
+    box-shadow: 2px 2px 3px 0px rgba(82, 80, 80, 0.75);
+    border: 1px solid black;
+    opacity: 0.7;
     width: 20px;
     height: 20px;
-    border-radius: 50px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 div#carousel-container div#carousel-images-list {

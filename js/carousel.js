@@ -19,6 +19,8 @@ class carousel {
     isArrowVisible = true;
     // Si les liens vers les images sont visibles ou pas
     isImagesLinksVisible = true;
+    // Si les numéros d'images sont affichés
+    isNumberImageVisible = false;
 
 
     /**
@@ -70,6 +72,10 @@ class carousel {
             this.isImagesLinksVisible = parameters.isImagesLinksVisible;
         }
 
+        if (typeof(parameters.isNumberImageVisible)!='undefined') {
+            this.isNumberImageVisible = parameters.isNumberImageVisible;
+        }
+
         // Nombre d'images
         this.nbImages = this.carouselImagesList.children.length;
 
@@ -102,6 +108,10 @@ class carousel {
             this.imagesLinksArray[i].classList.add('circle');
             this.imagesLinksArray[i].left=i*20+'px';
             this.imagesLinksArray[i].setAttribute('id','image-link-'+i);
+            // On ajoute le numéro si il le faut
+            if (this.isNumberImageVisible) {
+                this.imagesLinksArray[i].textContent=i+1;
+            }
             this.carouselImagesLinksContainer.appendChild(this.imagesLinksArray[i]);
             this.imagesLinksArray[i].addEventListener('click', () => {
                 this.goToOffset(i);
@@ -208,10 +218,13 @@ myCarouselParameters = {
     isInfinite: true,
 
     // Si les flèches sont visibles
-    isArrowVisible: false,
+    // isArrowVisible: true,
 
     // Si les liens directs vers les images est visible
-    isImagesLinksVisible: true
+    isImagesLinksVisible: true,
+
+    // Si on voit les numéros des images affichés
+    isNumberImageVisible: true
 };
 
 myCarousel = new carousel(myCarouselParameters);

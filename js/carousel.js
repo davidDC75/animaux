@@ -11,7 +11,7 @@ class carousel {
     btnBack = Object;
     btnForward = Object;
 
-    // Le tableau des liens direct vers les images
+    // Le tableau des puces vers les images
     imagesLinksArray = new Array;
     // Le nombre d'images
     nbImages = 0;
@@ -98,6 +98,8 @@ class carousel {
             });
         }
 
+        this.imagesLinksArray[0].classList.add('circle-current');
+
         console.log('Nb images : ',this.nbImages);
         // On raffraichit l'affichage des flèches
         this.refreshArrow();
@@ -112,7 +114,7 @@ class carousel {
         for(let i = 0; i < this.nbImages ; i++) {
             this.imagesLinksArray[i] = document.createElement('div');
             this.imagesLinksArray[i].classList.add('circle');
-            this.imagesLinksArray[i].left=i*30+'px';
+            this.imagesLinksArray[i].left=i*20+'px';
             this.imagesLinksArray[i].setAttribute('id','image-link-'+i);
             // On ajoute le numéro si il le faut
             if (this.isNumberImageVisible) {
@@ -132,10 +134,17 @@ class carousel {
      */
     clickBack() {
         console.log('ClickBack');
-        this.offset = ( this.offset > 0 ) ? --this.offset : this.nbImages-1;
+        if (this.offset > 0) {
+            this.removeCurrentCircle(this.offset);
+            this.offset--;
+            this.addCurrentcircle(this.offset);
+        } else {
+            this.removeCurrentCircle(this.offset);
+            this.offset=this.nbImages-1;
+            this.addCurrentcircle(this.offset);
+        }
         console.log('Offset : ',this.offset);
-        this.translateXImages();
-        this.refreshArrow();
+        this.refreshAll();
     }
 
     /**
@@ -145,10 +154,35 @@ class carousel {
      */
     clickForward() {
         console.log('ClickForward');
-        this.offset = ( this.offset < this.nbImages-1 ) ? ++this.offset : 0;
+        if ( this.offset < this.nbImages-1 ) {
+            this.removeCurrentCircle(this.offset);
+            this.offset++;
+            this.addCurrentcircle(this.offset);
+        } else {
+            this.removeCurrentCircle(this.offset);
+            this.offset=0;
+            this.addCurrentcircle(this.offset);
+        }
         console.log('Offset : ',this.offset);
-        this.translateXImages();
-        this.refreshArrow();
+        this.refreshAll();
+    }
+
+    /**
+     * Enlève la classe circle-curent à l'ancien offset
+     * @author s3g
+     * @param none
+     */
+    removeCurrentCircle(offset) {
+        this.imagesLinksArray[offset].classList.remove('circle-current');
+    }
+
+    /**
+     * Ajoute la classe circle-current à l'offset courant
+     * @author s3g
+     * @param none
+     */
+    addCurrentcircle(offset) {
+        this.imagesLinksArray[offset].classList.add('circle-current');
     }
 
     /**
@@ -159,9 +193,10 @@ class carousel {
     goToOffset(targetOffset) {
         console.log('Go to offset : ', targetOffset);
         if (typeof(targetOffset)=='number' && targetOffset>=0 && targetOffset<this.nbImages) {
+            this.removeCurrentCircle(this.offset);
             this.offset = targetOffset;
-            this.translateXImages();
-            this.refreshArrow();
+            this.addCurrentcircle(this.offset);
+            this.refreshAll();
         }
     }
 
@@ -198,6 +233,11 @@ class carousel {
         else {
             this.btnForward.style.display='block';
         }
+    }
+
+    refreshAll() {
+        this.translateXImages();
+        this.refreshArrow;
     }
 
 }

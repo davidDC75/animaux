@@ -5,14 +5,15 @@
 @charset "utf-8";
 
 /* La taille du carousel */
-div#carousel-container {
+:root {
     --carousel-width: 800px;
     --carousel-height: 600px;
-}
-
-/* La durée de la transition des éléments du container */
-div#carousel-container div#carousel-images-list {
-    --transition-duration: 1s;
+    --carousel-transition-duration: 1s;
+    --carousel-arrows-width: 30px;
+    --carousel-arrows-height: 30px;
+    --carousel-link-width: 20px;
+    --carousel-link-height: 20px;
+    --carousel-link-transition-duration: 0.2s;
 }
 
 /* On centre le container sur l'écran et on lui assigne sa taille */
@@ -37,34 +38,39 @@ div#carousel-images-links-container {
     flex-flow: row nowrap;
     align-items: center;
     gap: 10px;
+
+    background-color: rgba(0, 52, 63, 0.744);
+    padding: 1% 1%;
+    border-radius: 10px 10px;
 }
 
 /* on défini la forme et la taille de nos liens direct vers les images */
 div#carousel-images-links-container .circle {
     position: relative;
     display: block;
-    /* background-color: rgba(0, 0, 0, 0.5); */
     background: rgba(255,255,255,0.5);
     box-shadow: 2px 2px 3px 0px rgba(82, 80, 80, 0.75);
     border: 2px solid #000;
-    opacity: 0.7;
-    width: 20px;
-    height: 20px;
+    opacity: 0.6;
+    width: var(--carousel-link-width);
+    height: var(--carousel-link-height);
     border-radius: 50%;
     cursor: pointer;
     /* Pour l'affichage des numéros des images */
     text-align: center;
     font-size: 0.8rem;
 
-    transition: all 0.2s;
+    transition: all var(--carousel-link-transition-duration);
 }
 
 div#carousel-images-links-container .circle:hover {
-    width: 25px;
-    height: 25px;
-    bottom: 1px;
+    background-color: rgb(255, 191, 102);
     font-size: 0.9rem;
     line-height: 1.3rem;
+}
+
+div#carousel-images-links-container .circle-current {
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 /* Le container qui contient nos images en flex row */
@@ -72,13 +78,13 @@ div#carousel-container div#carousel-images-list {
     display: flex;
     flex-flow: row nowrap;
     height: var(--carousel-height);
-    transition: all var(--transition-duration);
+    transition: all var(--carousel-transition-duration);
 }
 
 div#carousel-container .arrow-style {
     display: block;
-    width: 30px;
-    height: 30px;
+    width: var(--carousel-arrows-width);
+    height: var(--carousel-arrows-height);
     background-color: rgba(255,255 ,255, 0.4);
     border: 2px solid rgba(0, 0, 0, 0.6);
     border-radius: 50%;

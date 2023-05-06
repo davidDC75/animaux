@@ -1,25 +1,39 @@
 class carousel {
-    carouselContainer = document.getElementById('carousel-container');
-    carouselImageList = document.getElementById('carousel-images-list');
 
-    btnBack = document.getElementById('carousel-arrow-back');
-    btnForward = document.getElementById('carousel-arrow-forward');
+    // Les id des éléments du dom à utliser
+    carouselContainer = Object;
+    carouselImagesList = Object;
+    btnBack = Object;
+    btnForward = Object;
 
+    // Le nombre d'images
     nbImages = 0;
+    // L'offset actuelle
     offset = 0;
+    // Si le carousel est infinie ou non
     isInfinite = false;
 
     /**
      * Constructeur de la classe
      * @author s3g
+     * @param carouselContainer Le getElementById du container du carousel
+     * @param carouselImagesList Le getElementById du container des images
+     * @param btnBack Le getElementById du bouton gauche
+     * @param btnForward Le getElementById du bouton droite
      * @param isInfinite A true si on veut que le carousel soit infini
      */
-    constructor(isInfinite) {
-
+    constructor( carouselContainer, carouselImagesList, btnBack, btnForward, isInfinite) {
+        // Initialisation variables
+        this.carouselContainer = carouselContainer;
+        this.carouselImagesList = carouselImagesList;
+        this.btnBack = btnBack;
+        this.btnForward = btnForward;
         this.isInfinite = isInfinite;
 
-        this.nbImages = this.carouselImageList.children.length;
+        // Nombre d'images
+        this.nbImages = this.carouselImagesList.children.length;
 
+        // Ecoute sur les boutons
         this.btnBack.addEventListener('click', () => {
             this.clickBack();
         });
@@ -27,7 +41,9 @@ class carousel {
         this.btnForward.addEventListener('click', () => {
             this.clickForward();
         });
+
         console.log('Nb images : ',this.nbImages);
+        // On raffraichit l'affichage des flèches
         this.refreshArrow();
     }
 
@@ -63,7 +79,7 @@ class carousel {
      * @param none
      */
     translateXImages() {
-        this.carouselImageList.style.transform = 'translateX(-' + (100*this.offset) + '%)';
+        this.carouselImagesList.style.transform = 'translateX(-' + (100*this.offset) + '%)';
     }
 
     /**
@@ -86,7 +102,13 @@ class carousel {
 
 }
 
-myCarousel = new carousel(true);
+carouselContainer = document.getElementById('carousel-container');
+carouselImagesList = document.getElementById('carousel-images-list');
+
+btnBack = document.getElementById('carousel-arrow-back');
+btnForward = document.getElementById('carousel-arrow-forward');
+
+myCarousel = new carousel(carouselContainer,carouselImagesList,btnBack,btnForward,true);
 
 
 

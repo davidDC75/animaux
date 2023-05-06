@@ -9,7 +9,7 @@ class carousel {
     offset = 0;
 
     constructor() {
-        this.nbImages = this.carouselImageList.length;
+        this.nbImages = this.carouselImageList.children.length;
 
         this.btnBack.addEventListener('click', () => {
             this.clickBack();
@@ -18,28 +18,29 @@ class carousel {
         this.btnForward.addEventListener('click', () => {
             this.clickForward();
         });
-
+        console.log('Nb images : ',this.nbImages);
         this.refreshArrow();
     }
 
     clickBack() {
         console.log('ClickBack');
-        if ( this.offset == 0 ) {
-            return false;
+        if ( this.offset > 0 ) {
+            this.offset--;
+            console.log('Offset : ',this.offset);
+            this.translateXImages();
+            this.refreshArrow();
         }
-        this.offset--;
-        this.translateXImages();
-        this.refreshArrow();
     }
 
     clickForward() {
         console.log('ClickForward');
-        if ( this.offset == (this.nbImages-1) ) {
-            return false;
+        if ( this.offset < this.nbImages-1 ) {
+            this.offset++;
+            console.log('Offset : ',this.offset);
+            this.translateXImages();
+            this.refreshArrow();
         }
-        this.offset++;
-        this.translateXImages();
-        this.refreshArrow();
+
     }
 
     translateXImages() {

@@ -22,7 +22,7 @@ header h1 {
 	letter-spacing: 0.0015em;
 	text-align: center;
     color: #00353F;
-    text-shadow: 10px 10px #FFBF66;
+    text-shadow: 10px 10px rgb(255, 191, 102);
 }
 
 header p:nth-child(2) {
@@ -83,7 +83,7 @@ section#section-1 {
     }
 
     header p:nth-child(2) {
-        margin-top: 8vh;
+        margin-top: 8.5vh;
     }
 
     header p {

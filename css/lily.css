@@ -54,6 +54,7 @@ header img {
 ***********************************************/
 
 section#section-1 {
+    position: relative;
     width: 100vw;
     height: 100vh;
     background-color: #FFBF66;

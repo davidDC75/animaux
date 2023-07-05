@@ -8,8 +8,11 @@ class carousel {
     carouselContainer = Object;
     carouselImagesLinksContainer = Object;
     carouselImagesList = Object;
+    divFullscreen = Object;
     btnBack = Object;
     btnForward = Object;
+    btnFullscreen = Object;
+    btnCloseFullscreen = Object;
 
     // Le tableau des puces vers les images
     imagesLinksArray = new Array;
@@ -51,6 +54,8 @@ class carousel {
         } else {
             this.carouselImagesList = document.getElementById('carousel-images-list');
         }
+
+        // console.log(this.carouselImagesList.children[0]);
 
         if (typeof(parameters.btnBack)!='undefined') {
             this.btnBack = parameters.btnBack;
@@ -99,6 +104,16 @@ class carousel {
         }
 
         this.imagesLinksArray[0].classList.add('circle-current');
+
+        this.divFullscreen=document.getElementById('carousel-image-fullscreen');
+        this.btnFullscreen=document.getElementById('fullscreen-button');
+        this.btnFullscreen.addEventListener('click', () => {
+            this.showFullscreen();
+        });
+        this.btnCloseFullscreen=document.getElementById('close-fullscreen-button');
+        this.btnCloseFullscreen.addEventListener('click', () => {
+            this.closeFullscreen();
+        })
 
         console.log('Nb images : ',this.nbImages);
         // On raffraichit l'affichage des flèches
@@ -211,7 +226,7 @@ class carousel {
 
     /**
      * Raffraichie l'affichages des flèches
-     * @author s3g;
+     * @author s3g
      * @param none
      */
     refreshArrow() {
@@ -238,6 +253,29 @@ class carousel {
     refreshAll() {
         this.translateXImages();
         this.refreshArrow;
+    }
+
+    /**
+     * Affiche l'image sur tout l'écran
+     * @author s3g
+     * @param none
+     */
+    showFullscreen() {
+        console.log('show fullscreen');
+        let currentImg=this.carouselImagesList.children[this.offset];
+        let srcImg=currentImg.getAttribute('src');
+        this.divFullscreen.style.backgroundImage="url('"+srcImg+"')";
+        this.divFullscreen.style.display='block';
+    }
+
+    /**
+     * Ferme l'image en plein écran
+     * @author s3g
+     * @param none
+     */
+    closeFullscreen() {
+        console.log('close fullscreen');
+        this.divFullscreen.style.display='none';
     }
 
 }

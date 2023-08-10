@@ -6,8 +6,8 @@
 
 /* La taille du carousel */
 :root {
-    --carousel-width: 800px;
-    --carousel-height: 600px;
+    --carousel-width: 1600px;
+    --carousel-height: 900px;
     --carousel-transition-duration: 1s;
     --carousel-arrows-width: 30px;
     --carousel-arrows-height: 30px;
@@ -155,8 +155,8 @@ span#fullscreen-button {
 
 @media screen and (max-width: 852px) {
     :root {
-        --carousel-width: 500px;
-        --carousel-height: 375px;
+        --carousel-width: 800px;
+        --carousel-height: 450px;
         --carousel-arrows-width: 20px;
         --carousel-arrows-height: 20px;
         --carousel-link-gap: 8px;
@@ -167,8 +167,8 @@ span#fullscreen-button {
 
 @media screen and (max-width: 539px) {
     :root {
-        --carousel-width: 365px;
-        --carousel-height: 274px;
+        --carousel-width: 400px;
+        --carousel-height: 225px;
         --carousel-arrows-width: 20px;
         --carousel-arrows-height: 20px;
         --carousel-link-gap: 8px;

@@ -61,8 +61,8 @@ section#section-1 {
 }
 
 /* TABLETTE */
-/* media queries pour gèrer à partir de 1000 de max-width */
-@media screen and (max-width: 1000px) and (min-width: 538px) {
+/* media queries pour gèrer à partir de 852 de max-width */
+@media screen and (max-width: 852px) {
 
     header p {
         font-size: 0.75rem;
@@ -70,8 +70,8 @@ section#section-1 {
 }
 
 /* SMARTPHONE */
-/* media queries pour gèrer à partir de 375 de max-width */
-@media screen and (max-width: 375px) {
+/* media queries pour gèrer à partir de 539 de max-width */
+@media screen and (max-width: 539px) {
 
     header {
         height: 100vh;

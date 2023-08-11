@@ -55,7 +55,6 @@ class carousel {
             this.carouselImagesList = document.getElementById('carousel-images-list');
         }
 
-        // console.log(this.carouselImagesList.children[0]);
 
         if (typeof(parameters.btnBack)!='undefined') {
             this.btnBack = parameters.btnBack;
@@ -115,7 +114,6 @@ class carousel {
             this.closeFullscreen();
         })
 
-        console.log('Nb images : ',this.nbImages);
         // On raffraichit l'affichage des flèches
         this.refreshArrow();
     }
@@ -148,7 +146,6 @@ class carousel {
      * @param none
      */
     clickBack() {
-        console.log('ClickBack');
         if (this.offset > 0) {
             this.removeCurrentCircle(this.offset);
             this.offset--;
@@ -158,7 +155,6 @@ class carousel {
             this.offset=this.nbImages-1;
             this.addCurrentcircle(this.offset);
         }
-        console.log('Offset : ',this.offset);
         this.refreshAll();
     }
 
@@ -168,7 +164,6 @@ class carousel {
      * @param none
      */
     clickForward() {
-        console.log('ClickForward');
         if ( this.offset < this.nbImages-1 ) {
             this.removeCurrentCircle(this.offset);
             this.offset++;
@@ -178,7 +173,6 @@ class carousel {
             this.offset=0;
             this.addCurrentcircle(this.offset);
         }
-        console.log('Offset : ',this.offset);
         this.refreshAll();
     }
 
@@ -206,7 +200,6 @@ class carousel {
      * @param targetOffset La valeur que l'on veut attribuer à l'offset
      */
     goToOffset(targetOffset) {
-        console.log('Go to offset : ', targetOffset);
         if (typeof(targetOffset)=='number' && targetOffset>=0 && targetOffset<this.nbImages) {
             this.removeCurrentCircle(this.offset);
             this.offset = targetOffset;
@@ -261,11 +254,14 @@ class carousel {
      * @param none
      */
     showFullscreen() {
-        console.log('show fullscreen');
         let currentImg=this.carouselImagesList.children[this.offset];
         let srcImg=currentImg.getAttribute('src');
-        this.divFullscreen.style.backgroundImage="url('"+srcImg+"')";
+        let imgFullscreen=this.divFullscreen.children[1];
+        imgFullscreen.setAttribute('src',srcImg);
+        imgFullscreen.setAttribute('width',window.innerWidth);
         this.divFullscreen.style.display='block';
+        this.carouselContainer.style.display='none';
+
     }
 
     /**
@@ -274,8 +270,8 @@ class carousel {
      * @param none
      */
     closeFullscreen() {
-        console.log('close fullscreen');
         this.divFullscreen.style.display='none';
+        this.carouselContainer.style.display='block';
     }
 
 }
@@ -313,5 +309,24 @@ myCarouselParameters = {
 
 myCarousel = new carousel(myCarouselParameters);
 
+// Change la taille du carousel selon la taille de la fenêtre du navigateur
+function resizeWindow() {
+    let screenWidth=window.innerWidth;
+    if (screenWidth>3000) {
+        document.documentElement.style.setProperty('--carousel-width','1600px');
+        document.documentElement.style.setProperty('--carousel-height','900px');
+    }
+    if (screenWidth>2000 && screenWidth<=3000) {
+        let height=Math.round((1200/16)*9)
+        document.documentElement.style.setProperty('--carousel-width','1200px');
+        document.documentElement.style.setProperty('--carousel-height',height+'px');
+    }
+    if (screenWidth<=2000 ) {
+        let width=screenWidth-100;
+        let height=Math.round((width/16)*9)
+        document.documentElement.style.setProperty('--carousel-width',width+'px');
+        document.documentElement.style.setProperty('--carousel-height',height+'px');
+    }
+}
 
-
+resizeWindow();
